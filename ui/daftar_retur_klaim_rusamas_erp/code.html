@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Returns &amp; Claims - Rusamas ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#00164e",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "error-container": "#ffdad6",
+                        "outline": "#757682",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-fixed-variant": "#93000b",
+                        "inverse-surface": "#213145",
+                        "error": "#ba1a1a",
+                        "primary": "#00236f",
+                        "secondary": "#bb0112",
+                        "surface-tint": "#4059aa",
+                        "tertiary-fixed": "#ffdbcb",
+                        "primary-container": "#1e3a8a",
+                        "on-surface-variant": "#444651",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c5c5d3",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-fixed": "#410002",
+                        "secondary-container": "#e02928",
+                        "on-background": "#0b1c30",
+                        "tertiary": "#4b1c00",
+                        "on-tertiary-fixed-variant": "#773205",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#dce1ff",
+                        "surface-variant": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "on-secondary-container": "#fffbff",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "secondary-fixed": "#ffdad6",
+                        "on-tertiary-fixed": "#341100",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-fixed-variant": "#264191",
+                        "tertiary-container": "#6e2c00",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-fixed-dim": "#ffb4ab",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-primary-container": "#90a8ff",
+                        "on-tertiary-container": "#f39461",
+                        "on-surface": "#0b1c30",
+                        "inverse-primary": "#b6c4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "page-padding": "1.5rem",
+                        "grid-gutter": "1.5rem",
+                        "container-max-width": "1440px",
+                        "sidebar-width": "280px",
+                        "section-gap": "2rem"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1-mobile": ["30px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen">
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-primary-container dark:bg-primary-container border-r border-outline-variant shadow-sm flex flex-col z-20">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[24px]">corporate_fare</span>
+</div>
+<div>
+<h1 class="text-h3 font-h3 text-white">Rusamas ERP</h1>
+<p class="font-label-md text-label-md text-on-primary-container">Enterprise Management</p>
+</div>
+</div>
+<button class="w-full bg-secondary text-white font-label-md text-label-md h-12 rounded-lg flex items-center justify-center gap-2 hover:bg-secondary-container transition-colors mb-6 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                New Order
+            </button>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-label-md text-label-md">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span class="font-label-md text-label-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary text-white font-bold border-l-4 border-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">factory</span>
+<span class="font-label-md text-label-md">Production</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+</nav>
+<div class="p-4 mt-auto border-t border-outline-variant/30">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<header class="fixed top-0 right-0 w-[calc(100%-280px)] h-16 bg-surface-container-low border-b border-outline-variant flex justify-between items-center px-page-padding z-10">
+<div class="flex-1 flex items-center max-w-md">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg py-2 pl-10 pr-4 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors h-10" placeholder="Search returns, claims, or orders..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full border border-surface-container-low"></span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="h-8 w-px bg-outline-variant mx-2"></div>
+<img alt="User Avatar" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="A professional corporate headshot of a middle-aged executive wearing a dark suit and light blue shirt. The lighting is soft and studio-quality, creating a trustworthy and stable mood. The background is a clean, neutral white to perfectly match the modern enterprise application aesthetic, reinforcing a sense of clarity and corporate precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmWPw9xVw5lzgd0qqzp5mB1Gg_B9aZjGLILMXHTOHsKqD6p-9JkKWBwwzlkCVnvBUDW6YzKNfBvrSoAA7Pw-DPC52JtODZIhM6rm6Rlho1C2pe0uIhXHsJ5B-wUe4PebfMUNr5xSUGkstvuTrCfGVd4TE649ep3085Az3ZaCDOijKAsZx__ZWDFQisdyfgFvoN-jfi1YrU3SrbsRNJVuU4O281pz-uCG18BDvaKUcR_7LI1XdI-xOs-W986PrsmqM6k4-Cz17lDtA"/>
+</div>
+</header>
+<main class="ml-[280px] mt-16 p-page-padding">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+<div>
+<h2 class="text-h2 font-h2 text-on-background mb-1">Returns &amp; Claims</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage customer product returns, inspect items, and process resolutions.</p>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 h-12 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors shadow-sm shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment_return</span>
+                New Return
+            </button>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-[0_4px_20px_rgba(30,58,138,0.03)] overflow-hidden">
+<div class="p-4 border-b border-outline-variant flex items-center gap-4 bg-surface-container-lowest">
+<div class="flex items-center gap-2 border border-outline-variant rounded-lg p-1 bg-surface-container-low">
+<button class="px-4 py-1.5 rounded-md bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md border border-outline-variant/50">All Claims</button>
+<button class="px-4 py-1.5 rounded-md text-on-surface-variant hover:bg-surface-variant/50 transition-colors font-label-md text-label-md">Pending Inspection</button>
+<button class="px-4 py-1.5 rounded-md text-on-surface-variant hover:bg-surface-variant/50 transition-colors font-label-md text-label-md">Resolved</button>
+</div>
+</div>
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse min-w-[900px]">
+<thead>
+<tr class="bg-surface-container border-b border-outline-variant">
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant">Return ID</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant">Order Ref</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant">Client Name</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant">Reason</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant">Status</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/40">
+<tr class="bg-surface-container-lowest hover:bg-surface transition-colors group">
+<td class="py-4 px-6 font-label-md text-label-md text-primary font-bold">RTN-2023-8942</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface">ORD-9921-A</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface">Acme Manufacturing Corp</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">broken_image</span>
+<span class="font-body-md text-body-md text-on-surface">Damaged in Transit</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md border border-tertiary-fixed-dim/50">
+                                    Pending
+                                </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</td>
+</tr>
+<tr class="bg-surface-bright hover:bg-surface transition-colors group">
+<td class="py-4 px-6 font-label-md text-label-md text-primary font-bold">RTN-2023-8941</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface">ORD-9884-C</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface">Global Tech Logistics</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">swap_horiz</span>
+<span class="font-body-md text-body-md text-on-surface">Wrong Item Shipped</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md border border-primary-fixed-dim/50">
+                                    Inspected
+                                </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface transition-colors group">
+<td class="py-4 px-6 font-label-md text-label-md text-primary font-bold">RTN-2023-8935</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface">ORD-9810-B</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface">Nexus Industries</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">production_quantity_limits</span>
+<span class="font-body-md text-body-md text-on-surface">Defective Part</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container text-on-primary-fixed font-label-md text-label-md border border-outline-variant">
+                                    Refunded
+                                </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</td>
+</tr>
+<tr class="bg-surface-bright hover:bg-surface transition-colors group">
+<td class="py-4 px-6 font-label-md text-label-md text-primary font-bold">RTN-2023-8920</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface">ORD-9755-A</td>
+<td class="py-4 px-6 font-body-md text-body-md text-on-surface">Zenith Corporation</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">broken_image</span>
+<span class="font-body-md text-body-md text-on-surface">Damaged Packaging</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container text-on-primary-fixed font-label-md text-label-md border border-outline-variant">
+                                    Replaced
+                                </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-outline-variant flex items-center justify-between bg-surface-container-lowest">
+<span class="font-body-md text-body-md text-on-surface-variant">Showing 1 to 4 of 42 entries</span>
+<div class="flex gap-2">
+<button class="w-10 h-10 border border-outline-variant rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 border border-outline-variant rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

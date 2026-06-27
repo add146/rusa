@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rusamas ERP - Product Detail</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#d3e4fe",
+                        "primary": "#00236f",
+                        "outline": "#757682",
+                        "on-primary-container": "#90a8ff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-tint": "#4059aa",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary-fixed-variant": "#773205",
+                        "secondary": "#bb0112",
+                        "outline-variant": "#c5c5d3",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-error": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "tertiary": "#4b1c00",
+                        "on-tertiary-container": "#f39461",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#410002",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "secondary-fixed": "#ffdad6",
+                        "on-secondary-container": "#fffbff",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1e3a8a",
+                        "secondary-fixed-dim": "#ffb4ab",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "background": "#f8f9ff",
+                        "secondary-container": "#e02928",
+                        "on-primary-fixed-variant": "#264191",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary-fixed": "#341100",
+                        "surface-bright": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-surface": "#0b1c30",
+                        "tertiary-container": "#6e2c00",
+                        "on-primary-fixed": "#00164e",
+                        "surface": "#f8f9ff",
+                        "primary-fixed": "#dce1ff",
+                        "on-secondary-fixed-variant": "#93000b",
+                        "on-surface-variant": "#444651"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "page-padding": "1.5rem",
+                        "section-gap": "2rem",
+                        "container-max-width": "1440px",
+                        "sidebar-width": "280px",
+                        "grid-gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "h1": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }],
+                        "h1-mobile": ["30px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c5c5d3;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #757682;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md antialiased overflow-x-hidden">
+<!-- App Container -->
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav aria-label="Sidebar" class="fixed left-0 top-0 h-full w-[280px] bg-primary-container dark:bg-primary-container text-on-primary-container font-body-md text-body-md border-r border-outline-variant shadow-sm flex flex-col z-20 transition-transform duration-300 md:translate-x-0 -translate-x-full">
+<!-- Header Brand -->
+<div class="p-page-padding border-b border-white/10 shrink-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary font-bold text-2xl">diamond</span>
+</div>
+<div>
+<h1 class="text-h3 font-h3 text-white tracking-tight leading-tight">Rusamas ERP</h1>
+<p class="text-[12px] opacity-80 mt-0.5 uppercase tracking-wider font-semibold">Enterprise Management</p>
+</div>
+</div>
+</div>
+<!-- Primary Navigation Tabs -->
+<div class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">group</span>
+<span>Clients</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary text-white font-bold border-l-4 border-white shadow-md" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">shopping_cart</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">factory</span>
+<span>Production</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">analytics</span>
+<span>Reports</span>
+</a>
+</div>
+<!-- CTA & Footer -->
+<div class="p-4 border-t border-white/10 space-y-2 shrink-0">
+<button class="w-full flex items-center justify-center gap-2 bg-white text-primary font-label-md text-label-md py-3 rounded-lg shadow-sm hover:bg-surface-variant transition-colors mb-4">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    New Order
+                </button>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="text-sm">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col md:ml-[280px] w-full min-w-0 bg-background">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-280px)] h-16 bg-surface dark:bg-surface-dim font-label-md text-label-md bg-surface-container-low border-b border-outline-variant flat no shadows flex justify-between items-center px-page-padding z-10">
+<!-- Search Bar (on_left configuration) -->
+<div class="flex-1 max-w-md">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-white border border-outline-variant rounded-full text-sm text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-sm" placeholder="Search across ERP..." type="text"/>
+</div>
+</div>
+<!-- Trailing Actions & Profile -->
+<div class="flex items-center gap-4 shrink-0 pl-4">
+<button aria-label="Notifications" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full border border-surface"></span>
+</button>
+<button aria-label="Help" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="w-px h-6 bg-outline-variant mx-2"></div>
+<button class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+<img alt="User Avatar" class="w-9 h-9 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a corporate user with a neutral background, suitable for a light-mode enterprise software application user profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TRI5D3LNX0z32zzv6YOZwRSP9UHlD6sZ-WJhxe3sKnxuJfQZVQyQVnJlBmO40gNM5JUOP6E5sz7aXgjovlwKcsRHUZfnlTg5EOxTeKxuXO-s3XlPBvu7_9L4JbIdBiDLcbrehm1P7UOkx_dNDQCA9BOTJ2cnvJDF_UlTPCo7aoapjuvZYAkUUFwbeaoRuCXDi_lvdzuoADz5HVPwzgNKXcICUAnqj8-m-Fv9aqgaZl4Ik-UAVtKLmHhffgbv04lzSapAqNVM5hY"/>
+</button>
+</div>
+</header>
+<!-- Scrollable Page Content -->
+<div class="flex-1 overflow-y-auto mt-16 p-page-padding">
+<div class="max-w-container-max-width mx-auto">
+<!-- Page Header & Actions -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-section-gap">
+<div>
+<div class="flex items-center gap-2 text-sm text-outline mb-1">
+<a class="hover:text-primary transition-colors" href="#">Products</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-medium">New Product</span>
+</div>
+<h2 class="text-h2 font-h2 text-on-surface">Product Details</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="h-12 px-6 rounded-lg border border-outline-variant bg-surface text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors flex items-center gap-2">
+                                Cancel
+                            </button>
+<button class="h-12 px-8 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 shadow-sm transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                                Save Product
+                            </button>
+</div>
+</div>
+<!-- Main Split Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter items-start">
+<!-- Left Column: Image Gallery (4 columns wide on lg) -->
+<div class="lg:col-span-4 space-y-4">
+<!-- Main Image -->
+<div class="aspect-square bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-sm relative group cursor-pointer">
+<img alt="Product Main Image" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional, high-resolution product photography shot of a sleek, modern industrial mechanical component resting on a pristine white surface. The lighting is bright, high-key, and evenly distributed, highlighting the precision-machined metallic textures and crisp edges of the object. The overall aesthetic is clean, corporate, and highly technical, fitting perfectly within a sophisticated enterprise resource planning interface that utilizes a predominantly light-mode color palette with subtle cool tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB_h07SDEfpc5QhOTTQb17QFH7R3uFFs07FSdi3EtFQXIN3BRoAOsU_vaSQz1Hg3sAVbMKrqVglOPItO15Ox_lrHugUaBc5C0d0xL8Vy69yWKMX-wzQTXxHEVMGvPHKF_c10i4BYvaZz5hXkR4r-C9cb2031T4_Wn0gs57_E6u8iw0QARyGeZFXsb_o9YVPyY3wdHqUaxrJ3g74tDMbman6-CYuNTY_COJdcM-Xr1Sf9B4LoEP8nmCnmhnuQbD-ch-RlKpZnb79kg"/>
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+<button class="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">upload</span>
+</button>
+</div>
+</div>
+<!-- Thumbnail Strip -->
+<div class="flex gap-3 overflow-x-auto pb-2 -mx-1 px-1">
+<button class="w-20 h-20 shrink-0 bg-surface border-2 border-primary rounded-lg overflow-hidden relative">
+<img alt="Thumbnail 1" class="w-full h-full object-cover" data-alt="A close-up macro shot of a polished metallic industrial component, heavily lit against a stark white background to emphasize material quality and engineering precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFICjlcPzpru5va_8dn6HHrAv1bER-haJQ6h13Fj6cagIPbbFSxcQG1MPavwFew7PjMk0aa4QrNNLFx6rSoCmLpZwwnSHzJYDJ4MqfV6h9CRcACj3UxdrX58JrX69TRqh079wswDnNM4iSTuGj-K3X3nYP_KMzhbSiUKHoXveE0Lpm0P54Z1OxV3TwKpWpiNNAJ7eDmWgGbeNMyladmmtuNsATBa9TM55GWx6XGH7PVk-HqXJcJVnZQmlkJOEigtr9_zxSYoxOyzc"/>
+</button>
+<button class="w-20 h-20 shrink-0 bg-surface border border-outline-variant rounded-lg overflow-hidden hover:border-primary transition-colors opacity-70 hover:opacity-100">
+<img alt="Thumbnail 2" class="w-full h-full object-cover" data-alt="An alternative angle showing the side profile of a precision-engineered industrial part, placed on a bright, minimalist surface to suit a corporate software UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMWqUE7mozPTDEJK2xWVWA6_JXs1LMbDawS-XKILXBEJ2mOBl4FNlFogTMr4qPUG8UVAetoN9vJ_kCQ4h4FYnCTyX9KNO-xZ7GsQnnGAy3UznFi4-QgaX2rLL12mfzHlPkx9hfOg3EipfNawEOE7G8TffphYc1yzUJU3uPAcrFfQ-AxMuCfv273a-vbVaVWxIIMVg-wlf4xTAtTGFUkXnHqp-k1KXMXsQ5I-s2mTHzX_yqutN3eWdJqOdess3E7ZqhLejzC2YEAwo"/>
+</button>
+<button class="w-20 h-20 shrink-0 bg-surface-container-low border border-outline-variant border-dashed rounded-lg flex flex-col items-center justify-center text-outline hover:text-primary hover:border-primary hover:bg-surface transition-all">
+<span class="material-symbols-outlined text-[24px]">add_photo_alternate</span>
+<span class="text-[10px] font-semibold mt-1">Add Image</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Structured Information Form (8 columns wide on lg) -->
+<div class="lg:col-span-8 space-y-6">
+<!-- Card 1: Basic Information -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm p-6 relative overflow-hidden">
+<!-- Subtle accent line at top of card -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary-fixed-dim"></div>
+<h3 class="text-h3 font-h3 text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+                                    Basic Information
+                                </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Product Name (Full Width) -->
+<div class="md:col-span-2">
+<label class="block text-label-md font-label-md text-on-surface mb-2" for="product_name">Product Name <span class="text-secondary">*</span></label>
+<input class="w-full h-12 px-4 bg-white border border-outline-variant rounded-lg text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow placeholder:text-outline/60" id="product_name" placeholder="e.g. Servo Motor AX-500" type="text"/>
+</div>
+<!-- SKU -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-2" for="sku">SKU (Stock Keeping Unit) <span class="text-secondary">*</span></label>
+<div class="relative">
+<input class="w-full h-12 pl-4 pr-10 bg-white border border-outline-variant rounded-lg text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow font-mono text-sm uppercase" id="sku" placeholder="PRD-001-XYZ" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline text-[20px] cursor-help" title="Must be unique across catalog">qr_code_2</span>
+</div>
+</div>
+<!-- Category -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-2" for="category">Category</label>
+<div class="relative">
+<select class="w-full h-12 pl-4 pr-10 bg-white border border-outline-variant rounded-lg text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer" id="category">
+<option disabled="" selected="" value="">Select category...</option>
+<option value="electronics">Electronics &amp; Sensors</option>
+<option value="mechanical">Mechanical Parts</option>
+<option value="raw_materials">Raw Materials</option>
+<option value="packaging">Packaging</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Description (Full Width) -->
+<div class="md:col-span-2">
+<label class="block text-label-md font-label-md text-on-surface mb-2" for="description">Description</label>
+<textarea class="w-full p-4 bg-white border border-outline-variant rounded-lg text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow resize-y min-h-[100px]" id="description" placeholder="Enter detailed product description, specifications, and internal notes..." rows="3"></textarea>
+</div>
+</div>
+</div>
+<!-- Card 2: Pricing Strategy -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm p-6 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-surface-variant"></div>
+<h3 class="text-h3 font-h3 text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">payments</span>
+                                    Pricing Configuration
+                                </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Base Selling Price -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-2" for="selling_price">Base Selling Price <span class="text-secondary">*</span></label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none border-r border-outline-variant pr-3 bg-surface-container-low rounded-l-lg h-full">
+<span class="text-outline font-semibold">USD</span>
+</div>
+<input class="w-full h-12 pl-[76px] pr-4 bg-white border border-outline-variant rounded-lg text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow" id="selling_price" placeholder="0.00" step="0.01" type="number"/>
+</div>
+</div>
+<!-- Cost Price (Optional/Internal) -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-2 text-outline" for="cost_price">Internal Cost Price</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none border-r border-outline-variant pr-3 bg-surface-container-low rounded-l-lg h-full opacity-70">
+<span class="text-outline font-semibold">USD</span>
+</div>
+<input class="w-full h-12 pl-[76px] pr-4 bg-white border border-outline-variant rounded-lg text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow text-outline" id="cost_price" placeholder="0.00" step="0.01" title="Visible to admins only" type="number"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Inventory Control -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm p-6 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-surface-variant"></div>
+<h3 class="text-h3 font-h3 text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">warehouse</span>
+                                    Inventory Parameters
+                                </h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+<!-- Current Stock (Read-only aesthetic for new form, or initial value) -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-2" for="initial_stock">Initial Stock Level</label>
+<input class="w-full h-12 px-4 bg-white border border-outline-variant rounded-lg text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow" id="initial_stock" type="number" value="0"/>
+</div>
+<!-- Reorder Point -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-2" for="reorder_point">Reorder Alert Point <span class="text-secondary">*</span></label>
+<div class="relative">
+<input class="w-full h-12 pl-4 pr-10 bg-white border border-outline-variant border-l-4 border-l-secondary rounded-lg text-body-md focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-shadow" id="reorder_point" placeholder="e.g. 50" type="number"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-secondary text-[20px] cursor-help" title="System alerts when stock falls below this">warning</span>
+</div>
+</div>
+<!-- UOM (Unit of Measure) -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-2" for="uom">Unit of Measure</label>
+<div class="relative">
+<select class="w-full h-12 pl-4 pr-10 bg-white border border-outline-variant rounded-lg text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer" id="uom">
+<option selected="" value="pcs">Pieces (Pcs)</option>
+<option value="kg">Kilograms (Kg)</option>
+<option value="m">Meters (m)</option>
+<option value="box">Boxes</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

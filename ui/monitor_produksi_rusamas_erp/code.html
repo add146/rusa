@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Monitor Produksi - Rusamas ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for kanban columns */
+        .kanban-col::-webkit-scrollbar {
+            width: 6px;
+        }
+        .kanban-col::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .kanban-col::-webkit-scrollbar-thumb {
+            background-color: #c5c5d3;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#e02928",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#410002",
+                        "on-tertiary-fixed": "#341100",
+                        "on-error": "#ffffff",
+                        "secondary": "#bb0112",
+                        "primary": "#00236f",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary-fixed": "#00164e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-primary-fixed-variant": "#264191",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-surface": "#0b1c30",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#93000b",
+                        "surface": "#f8f9ff",
+                        "on-primary-container": "#90a8ff",
+                        "outline-variant": "#c5c5d3",
+                        "primary-container": "#1e3a8a",
+                        "surface-container-highest": "#d3e4fe",
+                        "tertiary": "#4b1c00",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-tint": "#4059aa",
+                        "on-tertiary-fixed-variant": "#773205",
+                        "surface-container": "#e5eeff",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-fixed-dim": "#ffb4ab",
+                        "background": "#f8f9ff",
+                        "tertiary-container": "#6e2c00",
+                        "inverse-primary": "#b6c4ff",
+                        "on-background": "#0b1c30",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-high": "#dce9ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#444651",
+                        "secondary-fixed": "#ffdad6",
+                        "on-tertiary-container": "#f39461",
+                        "primary-fixed": "#dce1ff",
+                        "outline": "#757682",
+                        "inverse-surface": "#213145",
+                        "tertiary-fixed-dim": "#ffb691"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max-width": "1440px",
+                        "sidebar-width": "280px",
+                        "grid-gutter": "1.5rem",
+                        "page-padding": "1.5rem",
+                        "section-gap": "2rem"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1-mobile": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1-mobile": ["30px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-primary-container text-on-primary-container font-body-md border-r border-outline-variant shadow-sm flex flex-col z-20">
+<!-- Header -->
+<div class="p-6 border-b border-primary-container/20">
+<div class="flex items-center gap-3 mb-1">
+<span class="material-symbols-outlined text-white text-3xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">corporate_fare</span>
+<h1 class="text-h3 font-h3 text-white">Rusamas ERP</h1>
+</div>
+<p class="text-on-primary-container text-sm opacity-80">Enterprise Management</p>
+</div>
+<!-- CTA -->
+<div class="px-4 py-6">
+<button class="w-full bg-secondary text-on-secondary rounded-lg h-12 flex items-center justify-center gap-2 hover:bg-secondary/90 transition-colors shadow-sm font-label-md text-label-md">
+<span class="material-symbols-outlined text-xl">add</span>
+                New Order
+            </button>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 overflow-y-auto px-2 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span>Orders</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-md bg-secondary text-white font-bold border-l-4 border-white scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">factory</span>
+<span>Production</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Reports</span>
+</a>
+</nav>
+<!-- Footer Navigation -->
+<div class="p-4 border-t border-primary-container/20 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-280px)] h-16 bg-surface-container-low border-b border-outline-variant flex justify-between items-center px-page-padding z-10 font-label-md text-label-md text-primary">
+<!-- Search -->
+<div class="flex-1 max-w-md">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface border border-outline-variant rounded-md pl-10 pr-4 py-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant/50" placeholder="Search orders, products..." type="text"/>
+</div>
+</div>
+<!-- Actions & Profile -->
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="h-8 w-px bg-outline-variant mx-2"></div>
+<div class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
+<div class="text-right hidden md:block">
+<p class="font-bold text-on-surface">Admin User</p>
+<p class="text-xs text-on-surface-variant font-normal">Workshop Lead</p>
+</div>
+<img alt="User Avatar" class="w-9 h-9 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRr3GmUDGx_NlPwVHuTxQOaDhp1J7eFSHsOOtPObmWYL9jFhY2FntgjVocf9nZTPbqHUKirDKbJj_l3YD-Ww0Ppj6LAnGM9UVTI1efOh7RCXyBO7t9e3rGn8Y9ehPTVF10Hmm9fjX8WuVowyrZAnzWPqU63jq4hmCK8XueKc67bM8BPeMDLHrmvmK4rABW24E5qXhd7C6fmuwP8sYwQnE6UCZhe7m3NynBFY4GBPmniD6jf_TP8FJzkNVyOxiUaCncZ3hqOdd7k6k"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[280px] mt-16 p-page-padding h-[calc(100vh-64px)] flex flex-col">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="text-h2 font-h2 text-on-surface mb-1">Monitor Produksi</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Workshop Level 1 Real-time Tracking</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface border border-outline-variant rounded-md text-on-surface hover:bg-surface-variant transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                    Filter
+                </button>
+</div>
+</div>
+<!-- Kanban Board Container -->
+<div class="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-grid-gutter overflow-hidden pb-4">
+<!-- Column 1: Antrean -->
+<div class="bg-surface-container-high rounded-xl p-4 flex flex-col h-full border border-outline-variant/50">
+<div class="flex justify-between items-center mb-4 px-2">
+<h3 class="text-h3 font-h3 text-on-surface flex items-center gap-2">
+                        Antrean
+                        <span class="bg-surface-variant text-on-surface-variant text-sm px-2 py-0.5 rounded-full font-label-md">3</span>
+</h3>
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">more_horiz</span></button>
+</div>
+<div class="kanban-col flex-1 overflow-y-auto space-y-4 pr-2">
+<!-- Standard Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-grab">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-md text-label-md text-primary">ORD-2023-089</span>
+<span class="bg-surface-variant text-on-surface-variant text-xs px-2 py-1 rounded font-semibold">Material Ready</span>
+</div>
+<h4 class="text-body-lg font-body-lg font-semibold text-on-surface mb-1">Industrial Valve X-100</h4>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">Qty: 500 units</p>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md pt-3 border-t border-outline-variant/30">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>15 Oct 2023</span>
+</div>
+</div>
+<!-- Urgent Card (Red Border Level 3 Alert) -->
+<div class="bg-surface-container-lowest border-2 border-error rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-grab relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-md text-label-md text-primary">ORD-2023-091</span>
+<span class="bg-error-container text-on-error-container text-xs px-2 py-1 rounded font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span> Urgent
+                            </span>
+</div>
+<h4 class="text-body-lg font-body-lg font-semibold text-on-surface mb-1">Custom Shaft Assembly</h4>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">Qty: 120 units</p>
+<div class="flex items-center gap-2 text-error font-label-md text-label-md pt-3 border-t border-outline-variant/30">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>Due Today, 14:00</span>
+</div>
+</div>
+<!-- Standard Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-grab">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-md text-label-md text-primary">ORD-2023-094</span>
+<span class="bg-surface-variant text-on-surface-variant text-xs px-2 py-1 rounded font-semibold">Pending Material</span>
+</div>
+<h4 class="text-body-lg font-body-lg font-semibold text-on-surface mb-1">Gearbox Housing A4</h4>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">Qty: 50 units</p>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md pt-3 border-t border-outline-variant/30">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>18 Oct 2023</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 2: Dalam Proses -->
+<div class="bg-surface-container-high rounded-xl p-4 flex flex-col h-full border border-outline-variant/50">
+<div class="flex justify-between items-center mb-4 px-2">
+<h3 class="text-h3 font-h3 text-on-surface flex items-center gap-2">
+                        Dalam Proses
+                        <span class="bg-primary text-on-primary text-sm px-2 py-0.5 rounded-full font-label-md">2</span>
+</h3>
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">more_horiz</span></button>
+</div>
+<div class="kanban-col flex-1 overflow-y-auto space-y-4 pr-2">
+<!-- In Progress Card -->
+<div class="bg-surface-container-lowest border border-outline-variant border-l-4 border-l-primary rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-grab">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-md text-label-md text-primary">ORD-2023-085</span>
+<span class="bg-primary-container text-on-primary-container text-xs px-2 py-1 rounded font-semibold">Machining (60%)</span>
+</div>
+<h4 class="text-body-lg font-body-lg font-semibold text-on-surface mb-1">Steel Flange C-Series</h4>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">Qty: 2000 units</p>
+<div class="w-full bg-surface-variant rounded-full h-1.5 mb-4">
+<div class="bg-primary h-1.5 rounded-full" style="width: 60%"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md pt-3 border-t border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">engineering</span>
+<span>Line B</span>
+</div>
+<span class="text-primary">12 Oct 2023</span>
+</div>
+</div>
+<!-- In Progress Card -->
+<div class="bg-surface-container-lowest border border-outline-variant border-l-4 border-l-primary rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-grab">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-md text-label-md text-primary">ORD-2023-088</span>
+<span class="bg-primary-container text-on-primary-container text-xs px-2 py-1 rounded font-semibold">Assembly (25%)</span>
+</div>
+<h4 class="text-body-lg font-body-lg font-semibold text-on-surface mb-1">Hydraulic Pump Component</h4>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">Qty: 350 units</p>
+<div class="w-full bg-surface-variant rounded-full h-1.5 mb-4">
+<div class="bg-primary h-1.5 rounded-full" style="width: 25%"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md pt-3 border-t border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">engineering</span>
+<span>Line A</span>
+</div>
+<span>14 Oct 2023</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 3: Selesai -->
+<div class="bg-surface-container-high rounded-xl p-4 flex flex-col h-full border border-outline-variant/50 opacity-90">
+<div class="flex justify-between items-center mb-4 px-2">
+<h3 class="text-h3 font-h3 text-on-surface flex items-center gap-2">
+                        Selesai
+                        <span class="bg-surface-variant text-on-surface-variant text-sm px-2 py-0.5 rounded-full font-label-md">Today</span>
+</h3>
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">more_horiz</span></button>
+</div>
+<div class="kanban-col flex-1 overflow-y-auto space-y-4 pr-2">
+<!-- Done Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 shadow-none opacity-80 cursor-default">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-md text-label-md text-outline">ORD-2023-082</span>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<h4 class="text-body-lg font-body-lg font-semibold text-on-surface mb-1 line-through decoration-outline-variant">Copper Wire Batches</h4>
+<p class="text-body-md font-body-md text-on-surface-variant mb-3">Qty: 1500 kg</p>
+<div class="text-xs text-on-surface-variant">
+                            Completed at 09:30 AM
+                        </div>
+</div>
+<!-- Done Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 shadow-none opacity-80 cursor-default">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-md text-label-md text-outline">ORD-2023-084</span>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<h4 class="text-body-lg font-body-lg font-semibold text-on-surface mb-1 line-through decoration-outline-variant">Standard Bearings B-2</h4>
+<p class="text-body-md font-body-md text-on-surface-variant mb-3">Qty: 5000 units</p>
+<div class="text-xs text-on-surface-variant">
+                            Completed at 11:15 AM
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

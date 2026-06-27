@@ -1,0 +1,39 @@
+{
+	"name": "rusamas-erp",
+	"routes": [
+		{ "pattern": "office.rusamas.my.id", "custom_domain": true }
+	],
+	"workers_dev": true,
+	"preview_urls": true,
+	"triggers": {
+		"crons": ["0 8 * * *"]
+	},
+
+	"main": "src/api/index.ts",
+	"compatibility_date": "2026-05-01",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"vars": {
+		"JWT_SECRET": "rusamas-super-secret-key-2026"
+	},
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS",
+		"not_found_handling": "single-page-application"
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "rusamas-erp-db",
+			"database_id": "e94363eb-4cc7-487b-9ceb-5af511b929d7",
+			"migrations_dir": "src/api/db/migrations"
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "BUCKET",
+			"bucket_name": "rusamas-erp-files"
+		}
+	]
+}

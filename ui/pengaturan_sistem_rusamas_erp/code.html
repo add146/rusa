@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>General System Settings - Rusamas ERP</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#00164e",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "error-container": "#ffdad6",
+                        "outline": "#757682",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-fixed-variant": "#93000b",
+                        "inverse-surface": "#213145",
+                        "error": "#ba1a1a",
+                        "primary": "#00236f",
+                        "secondary": "#bb0112",
+                        "surface-tint": "#4059aa",
+                        "tertiary-fixed": "#ffdbcb",
+                        "primary-container": "#1e3a8a",
+                        "on-surface-variant": "#444651",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c5c5d3",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-fixed": "#410002",
+                        "secondary-container": "#e02928",
+                        "on-background": "#0b1c30",
+                        "tertiary": "#4b1c00",
+                        "on-tertiary-fixed-variant": "#773205",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#dce1ff",
+                        "surface-variant": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "on-secondary-container": "#fffbff",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "secondary-fixed": "#ffdad6",
+                        "on-tertiary-fixed": "#341100",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-fixed-variant": "#264191",
+                        "tertiary-container": "#6e2c00",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-fixed-dim": "#ffb4ab",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-primary-container": "#90a8ff",
+                        "on-tertiary-container": "#f39461",
+                        "on-surface": "#0b1c30",
+                        "inverse-primary": "#b6c4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "page-padding": "1.5rem",
+                        "grid-gutter": "1.5rem",
+                        "container-max-width": "1440px",
+                        "sidebar-width": "280px",
+                        "section-gap": "2rem"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "h3": ["Plus Jakarta Sans", "sans-serif"],
+                        "label-md": ["Inter", "sans-serif"],
+                        "h2": ["Plus Jakarta Sans", "sans-serif"],
+                        "h1-mobile": ["Plus Jakarta Sans", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1-mobile": ["30px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- Shared Component: SideNavBar -->
+<nav class="hidden md:flex flex-col bg-primary-container dark:bg-primary-container font-body-md text-body-md fixed left-0 top-0 h-full w-[280px] border-r border-outline-variant shadow-sm z-40">
+<!-- Header -->
+<div class="h-16 flex items-center px-6 border-b border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-white flex items-center justify-center shrink-0">
+<span class="text-primary font-bold text-lg">R</span>
+</div>
+<div class="flex flex-col">
+<span class="text-h3 font-h3 text-white truncate text-lg">Rusamas ERP</span>
+<span class="text-on-primary-container text-xs opacity-80">Enterprise Management</span>
+</div>
+</div>
+</div>
+<!-- Main Navigation -->
+<div class="flex-1 overflow-y-auto py-4 flex flex-col gap-1 px-3">
+<div class="px-3 pb-2 pt-1">
+<button class="w-full bg-white text-primary font-label-md text-label-md py-3 rounded-lg shadow-sm hover:bg-surface-dim transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">add</span>
+                    New Order
+                </button>
+</div>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors group" href="#">
+<span class="material-symbols-outlined opacity-70 group-hover:opacity-100">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors group" href="#">
+<span class="material-symbols-outlined opacity-70 group-hover:opacity-100">group</span>
+<span>Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors group" href="#">
+<span class="material-symbols-outlined opacity-70 group-hover:opacity-100">inventory_2</span>
+<span>Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors group" href="#">
+<span class="material-symbols-outlined opacity-70 group-hover:opacity-100">shopping_cart</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors group" href="#">
+<span class="material-symbols-outlined opacity-70 group-hover:opacity-100">factory</span>
+<span>Production</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors group" href="#">
+<span class="material-symbols-outlined opacity-70 group-hover:opacity-100">analytics</span>
+<span>Reports</span>
+</a>
+</div>
+<!-- Footer Navigation -->
+<div class="mt-auto border-t border-outline-variant/30 p-3 flex flex-col gap-1">
+<!-- ACTIVE TAB LOGIC APPLIED HERE -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary text-white font-bold border-l-4 border-white transition-colors scale-[0.98]" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors group" href="#">
+<span class="material-symbols-outlined opacity-70 group-hover:opacity-100">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Wrapper (Accounts for Sidebar) -->
+<main class="w-full md:pl-[280px] min-h-screen flex flex-col relative">
+<!-- Shared Component: TopAppBar -->
+<header class="hidden md:flex justify-between items-center px-page-padding w-[calc(100%-280px)] h-16 fixed top-0 right-0 bg-surface dark:bg-surface-dim font-label-md text-label-md bg-surface-container-low border-b border-outline-variant z-30">
+<div class="flex items-center flex-1">
+<!-- Search Bar Placeholder -->
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full pl-9 pr-4 py-1.5 bg-white border border-outline-variant rounded-full text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-on-surface-variant transition-colors" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-fixed border-2 border-surface overflow-hidden ml-2 cursor-pointer relative group">
+<!-- Avatar Placeholder using initials -->
+<div class="w-full h-full flex items-center justify-center bg-primary text-white font-bold text-xs">
+                        AM
+                    </div>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="flex-1 pt-16 p-page-padding">
+<!-- Page Header -->
+<div class="mb-section-gap flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-h2 text-h2 text-on-surface">General Settings</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Manage core system configuration and company profiles.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-2 rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors h-12 flex items-center">
+                        Discard Changes
+                    </button>
+<button class="px-6 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm h-12 flex items-center">
+                        Save Configuration
+                    </button>
+</div>
+</div>
+<!-- Settings Layout: Sidebar within page -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter items-start">
+<!-- Inner Navigation (Sticky) -->
+<div class="lg:col-span-3 sticky top-[calc(64px+1.5rem)] flex flex-col gap-1 bg-surface-container-lowest p-2 rounded-xl border border-outline-variant shadow-sm">
+<button class="w-full text-left px-4 py-3 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md flex items-center gap-3 transition-colors relative">
+<span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-primary rounded-r-full"></span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">domain</span>
+                        Company Profile
+                    </button>
+<button class="w-full text-left px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-body-md text-body-md flex items-center gap-3 transition-colors">
+<span class="material-symbols-outlined">tune</span>
+                        System Preferences
+                    </button>
+<button class="w-full text-left px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-body-md text-body-md flex items-center gap-3 transition-colors">
+<span class="material-symbols-outlined">dns</span>
+                        ERP Maintenance
+                    </button>
+</div>
+<!-- Forms Container -->
+<div class="lg:col-span-9 flex flex-col gap-section-gap">
+<!-- Section: Company Profile -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="border-b border-outline-variant bg-surface px-6 py-4">
+<h2 class="font-h3 text-h3 text-on-surface">Company Profile</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Update your official corporate details and branding.</p>
+</div>
+<div class="p-6">
+<!-- Logo Upload -->
+<div class="flex items-start gap-6 mb-8 pb-8 border-b border-outline-variant/50">
+<div class="w-24 h-24 rounded-lg bg-surface-container border border-outline-variant flex items-center justify-center overflow-hidden relative group cursor-pointer shrink-0">
+<span class="material-symbols-outlined text-outline text-3xl group-hover:hidden">image</span>
+<div class="absolute inset-0 bg-primary/10 hidden group-hover:flex items-center justify-center backdrop-blur-[2px] transition-all">
+<span class="material-symbols-outlined text-primary">upload</span>
+</div>
+</div>
+<div class="flex-1 pt-2">
+<h3 class="font-label-md text-label-md text-on-surface mb-1">Company Logo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-3">Recommended size 512x512px. Max 2MB (PNG, JPG).</p>
+<div class="flex gap-3">
+<button class="px-4 py-2 rounded border border-primary text-primary font-label-md text-sm hover:bg-primary-fixed transition-colors">Upload New</button>
+<button class="px-4 py-2 rounded text-error font-label-md text-sm hover:bg-error-container transition-colors">Remove</button>
+</div>
+</div>
+</div>
+<!-- Standard Form Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-1.5 md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface-variant block">Legal Company Name</label>
+<input class="w-full px-4 py-2.5 rounded bg-surface border border-outline focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-on-surface outline-none transition-shadow h-12" type="text" value="PT. Rusamas Enterprise Jaya"/>
+</div>
+<div class="space-y-1.5 md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface-variant block">Registered Address</label>
+<textarea class="w-full px-4 py-2.5 rounded bg-surface border border-outline focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-on-surface outline-none transition-shadow resize-none" rows="3">Gedung Rusamas Tower Lt. 14
+Jl. Sudirman Kav 45-46
+Jakarta Pusat, 12190</textarea>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant block">Tax ID (NPWP)</label>
+<input class="w-full px-4 py-2.5 rounded bg-surface border border-outline focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-on-surface outline-none transition-shadow h-12 font-mono text-sm" type="text" value="01.234.567.8-901.000"/>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant block">Corporate Phone</label>
+<input class="w-full px-4 py-2.5 rounded bg-surface border border-outline focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-on-surface outline-none transition-shadow h-12" type="tel" value="+62 21 555 0192"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: System Preferences -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="border-b border-outline-variant bg-surface px-6 py-4">
+<h2 class="font-h3 text-h3 text-on-surface">System Preferences</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Regional and formatting defaults for global data entry.</p>
+</div>
+<div class="p-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant block">Base Currency</label>
+<div class="relative">
+<select class="w-full px-4 py-2.5 rounded bg-surface border border-outline focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-on-surface outline-none transition-shadow h-12 appearance-none pr-10">
+<option>IDR - Indonesian Rupiah</option>
+<option>USD - US Dollar</option>
+<option>SGD - Singapore Dollar</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">Changes to base currency affect historical reporting.</p>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant block">System Timezone</label>
+<div class="relative">
+<select class="w-full px-4 py-2.5 rounded bg-surface border border-outline focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-on-surface outline-none transition-shadow h-12 appearance-none pr-10">
+<option>(GMT+07:00) Western Indonesia Time (WIB)</option>
+<option>(GMT+08:00) Central Indonesia Time (WITA)</option>
+<option>(GMT+09:00) Eastern Indonesia Time (WIT)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="space-y-1.5 md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface-variant block">Date Format</label>
+<div class="flex gap-4">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="w-4 h-4 text-primary bg-surface border-outline focus:ring-primary" name="date_format" type="radio"/>
+<span class="font-body-md text-sm text-on-surface">DD/MM/YYYY</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-4 h-4 text-primary bg-surface border-outline focus:ring-primary" name="date_format" type="radio"/>
+<span class="font-body-md text-sm text-on-surface">MM/DD/YYYY</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-4 h-4 text-primary bg-surface border-outline focus:ring-primary" name="date_format" type="radio"/>
+<span class="font-body-md text-sm text-on-surface">YYYY-MM-DD</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: ERP Maintenance -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden mb-12">
+<div class="border-b border-outline-variant bg-surface px-6 py-4 flex justify-between items-center">
+<div>
+<h2 class="font-h3 text-h3 text-on-surface">ERP Maintenance</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Database management and diagnostic tools.</p>
+</div>
+<span class="px-3 py-1 bg-surface-container-high text-primary rounded-full text-xs font-bold border border-primary-fixed-dim">v 4.2.1-stable</span>
+</div>
+<div class="p-6 flex flex-col gap-6">
+<!-- Action Cards (Bento style mini) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="border border-outline-variant rounded-lg p-5 flex flex-col items-start bg-surface hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">backup</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Manual Database Backup</h4>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">Generate an encrypted snapshot of current ledger.</p>
+<button class="mt-auto font-label-md text-sm text-primary flex items-center gap-1 group-hover:underline">
+                                        Run Backup <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="border border-error/30 rounded-lg p-5 flex flex-col items-start bg-error-container/10 hover:bg-error-container/20 transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute right-[-20px] top-[-20px] opacity-5">
+<span class="material-symbols-outlined text-9xl text-error">warning</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-error/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform z-10">
+<span class="material-symbols-outlined text-error">restore_page</span>
+</div>
+<h4 class="font-label-md text-label-md text-error mb-1 z-10">System Restore</h4>
+<p class="font-body-md text-sm text-on-surface-variant mb-4 z-10">Revert database to a previous backup state.</p>
+<button class="mt-auto font-label-md text-sm text-error flex items-center gap-1 z-10 hover:underline">
+                                        Select Restore Point
+                                    </button>
+</div>
+</div>
+<!-- System Logs Preview (Zebra Table) -->
+<div class="mt-4">
+<div class="flex justify-between items-end mb-3">
+<h4 class="font-label-md text-label-md text-on-surface">Recent Diagnostic Logs</h4>
+<a class="text-sm text-primary hover:underline font-label-md" href="#">View Full Logs</a>
+</div>
+<div class="border border-outline-variant rounded-lg overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface border-b border-outline-variant text-xs text-on-surface-variant uppercase tracking-wider font-label-md">
+<th class="px-4 py-3 font-medium">Timestamp</th>
+<th class="px-4 py-3 font-medium">Event Code</th>
+<th class="px-4 py-3 font-medium">Status</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-sm">
+<tr class="border-b border-outline-variant/50 bg-white">
+<td class="px-4 py-3 text-on-surface-variant font-mono text-xs">2023-10-27 14:32:01</td>
+<td class="px-4 py-3 text-on-surface">CRON_BACKUP_SUCCESS</td>
+<td class="px-4 py-3"><span class="inline-flex items-center gap-1 text-green-700 bg-green-50 px-2 py-0.5 rounded text-xs font-bold border border-green-200"><span class="material-symbols-outlined text-[14px]">check_circle</span> OK</span></td>
+</tr>
+<tr class="border-b border-outline-variant/50 bg-surface">
+<td class="px-4 py-3 text-on-surface-variant font-mono text-xs">2023-10-27 09:15:22</td>
+<td class="px-4 py-3 text-on-surface">AUTH_ADMIN_LOGIN</td>
+<td class="px-4 py-3"><span class="inline-flex items-center gap-1 text-green-700 bg-green-50 px-2 py-0.5 rounded text-xs font-bold border border-green-200"><span class="material-symbols-outlined text-[14px]">check_circle</span> OK</span></td>
+</tr>
+<tr class="bg-white">
+<td class="px-4 py-3 text-on-surface-variant font-mono text-xs">2023-10-26 23:59:05</td>
+<td class="px-4 py-3 text-on-surface">API_RATE_LIMIT_WARN</td>
+<td class="px-4 py-3"><span class="inline-flex items-center gap-1 text-yellow-800 bg-yellow-100 px-2 py-0.5 rounded text-xs font-bold border border-yellow-300"><span class="material-symbols-outlined text-[14px]">warning</span> WARN</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+</body></html>

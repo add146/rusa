@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WhatsApp Settings - Rusamas ERP</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#1e3a8a",
+                    "error-container": "#ffdad6",
+                    "on-background": "#0b1c30",
+                    "on-surface": "#0b1c30",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "secondary-fixed-dim": "#ffb4ab",
+                    "outline": "#757682",
+                    "on-surface-variant": "#444651",
+                    "on-secondary-fixed-variant": "#93000b",
+                    "tertiary-container": "#6e2c00",
+                    "background": "#f8f9ff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffdbcb",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "outline-variant": "#c5c5d3",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#90a8ff",
+                    "surface-container-low": "#eff4ff",
+                    "secondary-container": "#e02928",
+                    "surface": "#f8f9ff",
+                    "secondary": "#bb0112",
+                    "primary": "#00236f",
+                    "inverse-primary": "#b6c4ff",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#d3e4fe",
+                    "surface-bright": "#f8f9ff",
+                    "on-primary-fixed": "#00164e",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-dim": "#cbdbf5",
+                    "tertiary": "#4b1c00",
+                    "on-secondary-container": "#fffbff",
+                    "on-secondary-fixed": "#410002",
+                    "surface-tint": "#4059aa",
+                    "primary-fixed": "#dce1ff",
+                    "on-tertiary-container": "#f39461",
+                    "tertiary-fixed-dim": "#ffb691",
+                    "surface-container-highest": "#d3e4fe",
+                    "secondary-fixed": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#773205",
+                    "on-tertiary-fixed": "#341100",
+                    "inverse-surface": "#213145",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#dce9ff",
+                    "on-primary-fixed-variant": "#264191"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "2rem",
+                    "container-max-width": "1440px",
+                    "sidebar-width": "280px",
+                    "page-padding": "1.5rem",
+                    "grid-gutter": "1.5rem"
+            },
+            "fontFamily": {
+                    "h2": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "h3": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "h1": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "h1-mobile": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "h2": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "h3": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "h1": [
+                            "40px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "h1-mobile": [
+                            "30px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+        },
+        }
+      }
+    </script>
+</head>
+<body class="bg-background min-h-screen text-on-background font-body-md text-body-md overflow-x-hidden">
+<!-- SideNavBar (Shared Component) -->
+<nav class="fixed left-0 top-0 h-full w-[280px] border-r border-outline-variant bg-primary-container shadow-sm flex flex-col z-50">
+<!-- Brand Header -->
+<div class="px-6 py-8 border-b border-white/10 flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary font-h3 text-h3" data-icon="corporate_fare">corporate_fare</span>
+</div>
+<div class="flex flex-col">
+<span class="text-h3 font-h3 text-white">Rusamas ERP</span>
+<span class="font-label-md text-label-md text-on-primary-container">Enterprise Management</span>
+</div>
+</div>
+<!-- Main Navigation -->
+<div class="flex-1 overflow-y-auto py-6 px-4 flex flex-col gap-2">
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="factory">factory</span>
+<span class="font-label-md text-label-md">Production</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+</div>
+<!-- CTA Button -->
+<div class="px-6 py-4">
+<button class="w-full bg-secondary hover:bg-secondary/90 text-white font-label-md text-label-md py-3 rounded-lg flex items-center justify-center gap-2 transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Order
+            </button>
+</div>
+<!-- Footer Navigation -->
+<div class="p-4 border-t border-white/10 flex flex-col gap-2">
+<!-- Active Tab (Settings Context) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary text-white font-bold border-l-4 border-white transition-colors active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</nav>
+<!-- TopAppBar (Shared Component) -->
+<header class="fixed top-0 right-0 w-[calc(100%-280px)] h-16 bg-surface-container-low border-b border-outline-variant flex justify-between items-center px-page-padding z-40">
+<!-- Breadcrumb / Context Title -->
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Settings</span>
+<span class="material-symbols-outlined text-outline text-sm" data-icon="chevron_right">chevron_right</span>
+<span class="font-label-md text-label-md text-primary">WhatsApp Configuration</span>
+</div>
+<!-- Actions & Profile -->
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors active:opacity-80 p-2 rounded-full hover:bg-surface-variant/50">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors active:opacity-80 p-2 rounded-full hover:bg-surface-variant/50">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="w-px h-6 bg-outline-variant mx-2"></div>
+<div class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
+<div class="flex flex-col text-right">
+<span class="font-label-md text-label-md text-on-surface">Admin User</span>
+<span class="font-body-md text-sm text-on-surface-variant">System Admin</span>
+</div>
+<img alt="User Avatar" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a middle-aged male executive with short dark hair, wearing a crisp blue dress shirt. The background is a blurred, brightly lit modern corporate office environment. The lighting is soft and flattering, emphasizing a trustworthy and competent demeanor suitable for a system administrator profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6sC3CSg4_Aij9kZ_PTXiSla5m0lIeuRv6J6C3D5MZbffc-WWWu5vt7hvVrew2KTwKp97-1Trja-tF5fqQHGevUncyBhoWSxQfGUYZcTj5bQsKfckvIpAP0_yLF3kaWUQTkmX2X6y05XMOpyQPUyZTg-_3KRPwJ5RtbYUywsM62Z7QaawdhOb7Kjrwr2LWsmRsdUk0PYakf1jMR6CDA6A0flS5ixnLbADTQeYoecGP832tclf1RO-igflZ_Dur4LndtrkrKlFkcFw"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[280px] pt-[88px] px-page-padding pb-section-gap min-h-screen">
+<!-- Page Header -->
+<div class="mb-8 max-w-[800px] mx-auto">
+<h1 class="font-h2 text-h2 text-on-surface mb-2">WhatsApp Integration</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Configure automated WhatsApp notifications and API connections to keep clients updated on their orders and production status.</p>
+</div>
+<!-- Form Layout (Centered 8-column equivalent max-width) -->
+<div class="max-w-[800px] mx-auto flex flex-col gap-8">
+<!-- Section 1: Connection Details -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0_4px_20px_rgba(30,58,138,0.03)] overflow-hidden">
+<div class="px-6 py-5 border-b border-outline-variant bg-surface-container-low/50 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="api">api</span>
+</div>
+<h2 class="font-h3 text-[20px] text-on-surface font-semibold">Connection Details</h2>
+</div>
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-md text-[12px] rounded-full flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+                        Disconnected
+                    </span>
+</div>
+<div class="p-6 flex flex-col gap-6">
+<!-- API Key Input -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-2" for="api_key">
+                            API Key
+                            <span class="material-symbols-outlined text-outline text-sm cursor-help" data-icon="info" title="Enter your WhatsApp Business API Key">info</span>
+</label>
+<div class="relative">
+<input class="w-full border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md bg-surface text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-outline/50 h-12" id="api_key" placeholder="Enter your 32-character API key" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Webhook URL Input -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="webhook_url">Webhook URL</label>
+<input class="w-full border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md bg-surface text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all h-12" id="webhook_url" type="text" value="https://api.rusamas.com/webhooks/whatsapp/v1"/>
+<p class="text-sm text-on-surface-variant mt-1">This endpoint receives incoming messages and delivery statuses.</p>
+</div>
+<!-- Action -->
+<div class="pt-2">
+<button class="bg-surface-variant text-primary hover:bg-primary hover:text-white border border-primary/20 font-label-md text-label-md px-6 py-3 rounded-lg transition-all active:scale-[0.98] flex items-center gap-2 h-12">
+<span class="material-symbols-outlined" data-icon="cable">cable</span>
+                            Test Connection
+                        </button>
+</div>
+</div>
+</section>
+<!-- Section 2: Automated Triggers -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0_4px_20px_rgba(30,58,138,0.03)] overflow-hidden">
+<div class="px-6 py-5 border-b border-outline-variant bg-surface-container-low/50">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="bolt">bolt</span>
+</div>
+<h2 class="font-h3 text-[20px] text-on-surface font-semibold">Automated Triggers</h2>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant mt-2 ml-11">Select which ERP events automatically dispatch a WhatsApp message to the client.</p>
+</div>
+<div class="flex flex-col">
+<!-- Trigger Item 1 -->
+<div class="flex items-center justify-between p-6 border-b border-outline-variant/50 hover:bg-surface/50 transition-colors">
+<div class="flex flex-col gap-1 pr-8">
+<span class="font-label-md text-label-md text-on-surface">New Order Confirmation</span>
+<span class="font-body-md text-sm text-on-surface-variant">Sends an immediate summary when a new order is logged in the system.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Trigger Item 2 -->
+<div class="flex items-center justify-between p-6 border-b border-outline-variant/50 hover:bg-surface/50 transition-colors">
+<div class="flex flex-col gap-1 pr-8">
+<span class="font-label-md text-label-md text-on-surface">Payment Verified</span>
+<span class="font-body-md text-sm text-on-surface-variant">Notifies the client once their down payment or final invoice is reconciled.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Trigger Item 3 -->
+<div class="flex items-center justify-between p-6 border-b border-outline-variant/50 hover:bg-surface/50 transition-colors">
+<div class="flex flex-col gap-1 pr-8">
+<span class="font-label-md text-label-md text-on-surface">Production Finished</span>
+<span class="font-body-md text-sm text-on-surface-variant">Alerts the client that manufacturing is complete and awaiting quality check.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Trigger Item 4 -->
+<div class="flex items-center justify-between p-6 hover:bg-surface/50 transition-colors">
+<div class="flex flex-col gap-1 pr-8">
+<span class="font-label-md text-label-md text-on-surface">Delivery Sent</span>
+<span class="font-body-md text-sm text-on-surface-variant">Provides tracking links and expected arrival times when goods leave the facility.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Bottom Actions -->
+<div class="flex items-center justify-end gap-4 mt-4 pt-6 border-t border-outline-variant">
+<button class="font-label-md text-label-md text-on-surface-variant hover:bg-surface-variant px-6 py-3 rounded-lg transition-colors h-12">
+                    Cancel
+                </button>
+<button class="bg-primary hover:bg-primary/90 text-white font-label-md text-label-md px-8 py-3 rounded-lg transition-colors active:scale-[0.98] h-12 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="save">save</span>
+                    Save Configuration
+                </button>
+</div>
+</div>
+</main>
+</body></html>

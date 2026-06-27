@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Owner Margin Report - Rusamas ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#00164e",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "error-container": "#ffdad6",
+                        "outline": "#757682",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-fixed-variant": "#93000b",
+                        "inverse-surface": "#213145",
+                        "error": "#ba1a1a",
+                        "primary": "#00236f",
+                        "secondary": "#bb0112",
+                        "surface-tint": "#4059aa",
+                        "tertiary-fixed": "#ffdbcb",
+                        "primary-container": "#1e3a8a",
+                        "on-surface-variant": "#444651",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c5c5d3",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-fixed": "#410002",
+                        "secondary-container": "#e02928",
+                        "on-background": "#0b1c30",
+                        "tertiary": "#4b1c00",
+                        "on-tertiary-fixed-variant": "#773205",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#dce1ff",
+                        "surface-variant": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "on-secondary-container": "#fffbff",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "secondary-fixed": "#ffdad6",
+                        "on-tertiary-fixed": "#341100",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-fixed-variant": "#264191",
+                        "tertiary-container": "#6e2c00",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-fixed-dim": "#ffb4ab",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-primary-container": "#90a8ff",
+                        "on-tertiary-container": "#f39461",
+                        "on-surface": "#0b1c30",
+                        "inverse-primary": "#b6c4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "page-padding": "1.5rem",
+                        "grid-gutter": "1.5rem",
+                        "container-max-width": "1440px",
+                        "sidebar-width": "280px",
+                        "section-gap": "2rem"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1-mobile": ["30px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col bg-primary-container dark:bg-primary-container fixed left-0 top-0 h-full w-[280px] border-r border-outline-variant shadow-sm z-50">
+<div class="p-6 flex flex-col items-center border-b border-primary-container/20">
+<div class="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="corporate_fare" data-weight="fill" style="font-variation-settings: 'FILL' 1;">corporate_fare</span>
+</div>
+<h2 class="text-h3 font-h3 text-white text-center">Rusamas ERP</h2>
+<p class="font-label-md text-label-md text-on-primary-container mt-1 opacity-80 text-center">Enterprise Management</p>
+</div>
+<div class="px-4 py-6">
+<button class="w-full bg-secondary hover:bg-secondary/90 text-white font-label-md text-label-md py-3 rounded-DEFAULT transition-colors flex items-center justify-center gap-2 mb-6 h-12">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Order
+            </button>
+</div>
+<ul class="flex-1 flex flex-col gap-1 px-4 overflow-y-auto">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Clients</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Products</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="factory">factory</span>
+<span class="font-label-md text-label-md">Production</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT bg-secondary text-white font-bold border-l-4 border-white Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+</li>
+</ul>
+<div class="p-4 border-t border-primary-container/20 mt-auto">
+<ul class="flex flex-col gap-1">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-on-primary-container hover:bg-primary/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col md:ml-[280px] h-full">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim h-16 bg-surface-container-low border-b border-outline-variant flat no shadows flex justify-between items-center px-page-padding w-full shrink-0 z-40 relative">
+<div class="flex items-center gap-4">
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="menu">menu</span>
+</div>
+<h1 class="text-h3 font-h3 text-primary hidden md:block">Rusamas ERP</h1>
+</div>
+<div class="flex-1 max-w-md mx-8 hidden lg:block">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full h-10 pl-10 pr-4 rounded-DEFAULT border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant/50">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant/50">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden cursor-pointer border border-outline-variant">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged male executive wearing a dark blue suit jacket. The background is a slightly out-of-focus modern office setting with bright, natural lighting. The mood is confident and reliable, fitting for an enterprise ERP user profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxIhf-gI0_v5nl3XXHWTKoYrAYIE0YhRP6IQO3y3ud93B4OWypgzaXfwKECIbHCOG0XY7Z3vgGmG1pMWfxydWoPWOVK837ctpvqwMkGlE-OKGhWVuQ8mNySgy8TsWAD32u4BeZGGwOU4yU8dIL76g5oypVd2gC63vC-RyqpwPEeLU08tbnT0LvEMNFrCWNIY2tIqeWAvbtpaSxHiFMrw-TEmFiMIzeFG1ovT9ZGOkU7aBsDKNJNqNkcO5BTVHf30JBphGmWPkwj28"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto p-page-padding pb-24 bg-slate-50">
+<div class="max-w-container-max-width mx-auto space-y-section-gap">
+<!-- Page Header with Badge -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<h1 class="font-h1 text-h1 text-on-surface">Margin Analysis</h1>
+<span class="bg-secondary-container text-on-secondary px-3 py-1 rounded-full font-label-md text-label-md border border-secondary shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="admin_panel_settings">admin_panel_settings</span>
+                                OWNER ONLY
+                            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Confidential financial overview for Pak Novel.</p>
+</div>
+<div class="flex items-center gap-3">
+<select class="h-12 px-4 rounded-DEFAULT border border-outline-variant bg-white font-label-md text-label-md focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface">
+<option>Q3 2023</option>
+<option>Q2 2023</option>
+<option>Q1 2023</option>
+<option>YTD 2023</option>
+</select>
+<button class="h-12 px-6 bg-white border border-outline-variant rounded-DEFAULT font-label-md text-label-md text-on-surface hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                            Export
+                        </button>
+</div>
+</div>
+<!-- KPI Cards Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
+<!-- Gross Profit -->
+<div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between h-32 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-24 bg-primary/5 rounded-bl-full -mr-4 -mt-4"></div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">Total Gross Profit</p>
+<h2 class="font-h2 text-h2 text-on-surface">Rp 4.25B</h2>
+</div>
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+12.4% vs last period</span>
+</div>
+</div>
+<!-- Net Profit -->
+<div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between h-32 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-24 bg-secondary/5 rounded-bl-full -mr-4 -mt-4"></div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">Total Net Profit</p>
+<h2 class="font-h2 text-h2 text-on-surface">Rp 1.82B</h2>
+</div>
+<div class="flex items-center gap-2 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm" data-icon="trending_down">trending_down</span>
+<span>-2.1% vs last period</span>
+</div>
+</div>
+<!-- Avg Margin -->
+<div class="bg-primary-container text-on-primary-container p-6 rounded-lg shadow-sm flex flex-col justify-between h-32 relative overflow-hidden">
+<div class="absolute right-0 top-0 opacity-10">
+<span class="material-symbols-outlined text-8xl -mr-4 -mt-4" data-icon="monitoring">monitoring</span>
+</div>
+<div>
+<p class="font-label-md text-label-md opacity-80 mb-1">Blended Net Margin</p>
+<h2 class="font-h2 text-h2 text-white">42.8%</h2>
+</div>
+<div class="flex items-center gap-2 font-label-md text-label-md text-inverse-primary">
+                            Target: 45.0%
+                        </div>
+</div>
+</div>
+<!-- Detailed SKU Table -->
+<div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-200 flex justify-between items-center bg-slate-50/50">
+<h3 class="font-h3 text-h3 text-on-surface">Top Selling SKUs Analysis</h3>
+<div class="flex gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded bg-white border border-outline-variant">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-slate-200">
+<th class="p-4 font-label-md text-label-md text-on-surface-variant whitespace-nowrap">SKU Code</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant">Product Name</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant text-right">Category</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant text-right">HPP (Cost)</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant text-right">Selling Price</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant text-right">Gross Margin</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant text-center">Status</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+<td class="p-4 font-label-md text-primary">RSM-101</td>
+<td class="p-4 text-on-surface font-medium">Premium Metal Roofing A</td>
+<td class="p-4 text-right text-on-surface-variant">Roofing</td>
+<td class="p-4 text-right text-on-surface">Rp 45,000</td>
+<td class="p-4 text-right text-on-surface font-medium">Rp 85,000</td>
+<td class="p-4 text-right text-primary font-bold">47.0%</td>
+<td class="p-4 text-center">
+<span class="inline-flex px-2 py-1 bg-surface-container-high text-primary text-xs font-bold rounded">Healthy</span>
+</td>
+</tr>
+<tr class="border-b border-slate-100 bg-slate-50 hover:bg-slate-100 transition-colors">
+<td class="p-4 font-label-md text-primary">RSM-204</td>
+<td class="p-4 text-on-surface font-medium">Standard Truss Beam C</td>
+<td class="p-4 text-right text-on-surface-variant">Structural</td>
+<td class="p-4 text-right text-on-surface">Rp 120,000</td>
+<td class="p-4 text-right text-on-surface font-medium">Rp 155,000</td>
+<td class="p-4 text-right text-secondary font-bold">22.5%</td>
+<td class="p-4 text-center">
+<span class="inline-flex px-2 py-1 bg-error-container text-error text-xs font-bold rounded">Review</span>
+</td>
+</tr>
+<tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+<td class="p-4 font-label-md text-primary">RSM-105</td>
+<td class="p-4 text-on-surface font-medium">Insulated Wall Panel</td>
+<td class="p-4 text-right text-on-surface-variant">Cladding</td>
+<td class="p-4 text-right text-on-surface">Rp 210,000</td>
+<td class="p-4 text-right text-on-surface font-medium">Rp 380,000</td>
+<td class="p-4 text-right text-primary font-bold">44.7%</td>
+<td class="p-4 text-center">
+<span class="inline-flex px-2 py-1 bg-surface-container-high text-primary text-xs font-bold rounded">Healthy</span>
+</td>
+</tr>
+<tr class="border-b border-slate-100 bg-slate-50 hover:bg-slate-100 transition-colors">
+<td class="p-4 font-label-md text-primary">RSM-302</td>
+<td class="p-4 text-on-surface font-medium">Galvanized Gutter System</td>
+<td class="p-4 text-right text-on-surface-variant">Accessories</td>
+<td class="p-4 text-right text-on-surface">Rp 35,000</td>
+<td class="p-4 text-right text-on-surface font-medium">Rp 75,000</td>
+<td class="p-4 text-right text-primary font-bold">53.3%</td>
+<td class="p-4 text-center">
+<span class="inline-flex px-2 py-1 bg-surface-container-high text-primary text-xs font-bold rounded">Healthy</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="p-4 font-label-md text-primary">RSM-209</td>
+<td class="p-4 text-on-surface font-medium">Lightweight Purlin</td>
+<td class="p-4 text-right text-on-surface-variant">Structural</td>
+<td class="p-4 text-right text-on-surface">Rp 85,000</td>
+<td class="p-4 text-right text-on-surface font-medium">Rp 110,000</td>
+<td class="p-4 text-right text-secondary font-bold">22.7%</td>
+<td class="p-4 text-center">
+<span class="inline-flex px-2 py-1 bg-error-container text-error text-xs font-bold rounded">Review</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

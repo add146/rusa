@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pending Payments Verification - Rusamas ERP</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#1e3a8a",
+                        "tertiary-fixed": "#ffdbcb",
+                        "surface-tint": "#4059aa",
+                        "secondary": "#bb0112",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "outline-variant": "#c5c5d3",
+                        "on-surface-variant": "#444651",
+                        "on-secondary": "#ffffff",
+                        "outline": "#757682",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#00164e",
+                        "primary": "#00236f",
+                        "error": "#ba1a1a",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-fixed-variant": "#93000b",
+                        "inverse-surface": "#213145",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "secondary-fixed": "#ffdad6",
+                        "on-tertiary-fixed": "#341100",
+                        "on-secondary-container": "#fffbff",
+                        "on-surface": "#0b1c30",
+                        "inverse-primary": "#b6c4ff",
+                        "on-tertiary-container": "#f39461",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-primary-container": "#90a8ff",
+                        "tertiary-container": "#6e2c00",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-fixed-dim": "#ffb4ab",
+                        "on-primary-fixed-variant": "#264191",
+                        "tertiary": "#4b1c00",
+                        "on-tertiary-fixed-variant": "#773205",
+                        "on-background": "#0b1c30",
+                        "secondary-container": "#e02928",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-fixed": "#410002",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed": "#dce1ff",
+                        "on-error": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "page-padding": "1.5rem",
+                        "grid-gutter": "1.5rem",
+                        "container-max-width": "1440px",
+                        "sidebar-width": "280px",
+                        "section-gap": "2rem"
+                    },
+                    fontFamily: {
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1-mobile": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "h3": ["24px", { lineHeight: "1.4", letterSpacing: "0", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "h1": ["40px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "label-md": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "h2": ["32px", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "h1-mobile": ["30px", { lineHeight: "1.2", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full w-[280px] bg-primary-container dark:bg-primary-container text-on-primary-container font-body-md text-body-md border-r border-outline-variant shadow-sm flex flex-col z-20">
+<!-- Header -->
+<div class="p-page-padding border-b border-primary-container/20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">account_balance</span>
+</div>
+<div>
+<h1 class="text-h3 font-h3 text-white m-0">Rusamas ERP</h1>
+<p class="text-label-md font-label-md text-on-primary-container opacity-80 m-0">Enterprise Management</p>
+</div>
+</div>
+<button class="mt-6 w-full py-3 px-4 bg-secondary text-white font-label-md text-label-md rounded shadow-sm hover:opacity-90 transition-opacity flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Order
+            </button>
+</div>
+<!-- Main Navigation -->
+<div class="flex-1 overflow-y-auto py-4">
+<ul class="flex flex-col gap-1 px-3">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                        Dashboard
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+                        Clients
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                        Products
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md bg-secondary text-white font-bold border-l-4 border-white transition-transform" href="#">
+<span class="material-symbols-outlined fill">shopping_cart</span>
+                        Orders
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined">factory</span>
+                        Production
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                        Reports
+                    </a>
+</li>
+</ul>
+</div>
+<!-- Footer Navigation -->
+<div class="p-4 border-t border-primary-container/20">
+<ul class="flex flex-col gap-1">
+<li>
+<a class="flex items-center gap-3 px-4 py-2 rounded-md text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+                        Settings
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 rounded-md text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+                        Logout
+                    </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-280px)] h-16 bg-surface dark:bg-surface-dim font-label-md text-label-md flex justify-between items-center px-page-padding bg-surface-container-low border-b border-outline-variant z-10">
+<!-- Search -->
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-md font-body-md transition-colors placeholder:text-on-surface-variant/70" placeholder="Search orders, clients..." type="text"/>
+</div>
+<!-- Actions & Profile -->
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="relative hover:text-primary transition-colors flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+<button class="hover:text-primary transition-colors flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+<div class="h-8 w-px bg-outline-variant/50"></div>
+<div class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
+<div class="text-right hidden md:block">
+<p class="text-label-md font-label-md text-on-surface m-0">Admin User</p>
+<p class="text-[12px] text-on-surface-variant m-0">Finance Dept</p>
+</div>
+<img alt="User Avatar" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a corporate manager, cleanly lit against a neutral gray background. The subject is wearing a sharp, dark blue business suit, fitting a high-end corporate ERP environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsoZKBrXYLNVYg4xd_Z4guI_UajvxuDBba9u7aw-khzqkDw_LKmjF5wbN12Z2W7ar-ksSqDGtdVBKuFteQQ9x1D5HShBXyukO0lzR5o81p62BmImLYl4LKol43Anc81JZ-kKJvdjdzswq-N5J2F92URjaK6Kki_jFvYQBb_DqkFjHZPJI0RE_olytycZwMHIxqbl0JA8OP_Q841otJZaM_HclEFYOdlaPp1CQPI13FqHeAFG4jR5NtKEE4t9HScY6ZhZ_agZB5HKs"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[280px] mt-16 w-[calc(100%-280px)] min-h-[calc(100vh-64px)] p-page-padding bg-background">
+<div class="max-w-container-max-width mx-auto flex flex-col gap-section-gap">
+<!-- Page Header -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-h2 font-h2 text-on-surface m-0 mb-2">Pending Payments Verification</h2>
+<p class="text-body-md font-body-md text-on-surface-variant m-0">Review and verify recently uploaded proofs of payment to process orders.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 border border-outline-variant bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded flex items-center gap-2 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filter
+                    </button>
+</div>
+</div>
+<!-- Data Table Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-lowest sticky top-0 z-10 border-b border-outline-variant">
+<tr>
+<th class="py-4 px-6 text-label-md font-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Order ID</th>
+<th class="py-4 px-6 text-label-md font-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Client</th>
+<th class="py-4 px-6 text-label-md font-label-md text-on-surface-variant uppercase tracking-wider font-semibold text-right">Amount</th>
+<th class="py-4 px-6 text-label-md font-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Method</th>
+<th class="py-4 px-6 text-label-md font-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Proof of Payment</th>
+<th class="py-4 px-6 text-label-md font-label-md text-on-surface-variant uppercase tracking-wider font-semibold text-right">Action</th>
+</tr>
+</thead>
+<tbody class="text-body-md font-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="border-b border-outline-variant/50 hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-4 px-6 font-semibold text-primary">ORD-2023-1045</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-sm">AC</div>
+<span>Acme Corporation</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right font-medium">$12,450.00</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-variant text-on-surface-variant">
+                                        Bank Transfer
+                                    </span>
+</td>
+<td class="py-4 px-6">
+    <div class="group relative cursor-pointer inline-block" onclick="openPreview('https://lh3.googleusercontent.com/aida-public/AB6AXuBgm3eVCSEs-swuGSW54u28wSTZ3w92jPGwmtT8VwgnWT_MYUBWsJl84KzleTLomh_jPhuUhYkTDzkZIJDblmkRl1zbdACvXp1uvQVk_YbdPd5jpE0_fZAVW8BCDSofvdXCOT3wGOFTQQn-od0iGA_rvVuHVdW-Jqp2YlMkfo_s-pcczTmx-8RR3rt4QLspOEdukqW58z72jPEI0Tp79hL6u_URI6re5z6X9mKZ1NzXQL8PpYINTkfSKP5Xtcrxud0isPU18iJ4V-w', 'verify-btn-1')">
+        <img alt="Receipt Thumbnail" class="w-12 h-12 object-cover rounded border border-outline-variant shadow-sm group-hover:border-primary transition-colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgm3eVCSEs-swuGSW54u28wSTZ3w92jPGwmtT8VwgnWT_MYUBWsJl84KzleTLomh_jPhuUhYkTDzkZIJDblmkRl1zbdACvXp1uvQVk_YbdPd5jpE0_fZAVW8BCDSofvdXCOT3wGOFTQQn-od0iGA_rvVuHVdW-Jqp2YlMkfo_s-pcczTmx-8RR3rt4QLspOEdukqW58z72jPEI0Tp79hL6u_URI6re5z6X9mKZ1NzXQL8PpYINTkfSKP5Xtcrxud0isPU18iJ4V-w"/>
+        <div class="absolute inset-0 bg-primary/10 rounded opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary shadow-sm text-lg">zoom_in</span>
+        </div>
+    </div>
+</td>
+<td class="py-4 px-6 text-right">
+    <button id="verify-btn-1" disabled class="inline-flex items-center justify-center h-10 px-6 font-label-md text-label-md bg-primary text-on-primary rounded opacity-50 cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+        Check Proof
+    </button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-outline-variant/50 hover:bg-surface-container-low transition-colors bg-surface">
+<td class="py-4 px-6 font-semibold text-primary">ORD-2023-1048</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-sm">GL</div>
+<span>Global Logistics Inc.</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right font-medium">$3,200.50</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-variant text-on-surface-variant">
+                                        Wire Transfer
+                                    </span>
+</td>
+<td class="py-4 px-6">
+<div class="group relative cursor-pointer inline-block">
+<img alt="Receipt Thumbnail" class="w-12 h-12 object-cover rounded border border-outline-variant shadow-sm group-hover:border-primary transition-colors" data-alt="A top-down view of a digital wire transfer confirmation screen printed on standard office paper. The document features structured data grids, a prominent transaction ID, and a digital signature stamp. The image is evenly lit with a cool, professional color temperature, typical of enterprise document scanning." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw5LdQDpDYQiWFX0_EAyJVhb91X04eBaadTtXPScxYno0_oSinWgTBIMOhlOSuuUNxZH52Ri7dexDdrRwLNjbUH5aZMbC6HNd9Am93GsIKITNkY8zjJ86Lugwq5WhL1A4bJvTpP0ZlIi1UMSmlFHmQxZCrnYNUsaR6qt7ocsHP2DSlTOaYBRv9vHe7cZyy89hSFt31T6pg-WZZ8LVsdCglmOHLPdmWq1t7KduiBHwBwvrNQl0cfVP3u6kD6xWQw0ZC8p1nnYxD7C4"/>
+<div class="absolute inset-0 bg-primary/10 rounded opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-primary shadow-sm text-lg">zoom_in</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="inline-flex items-center justify-center h-10 px-6 font-label-md text-label-md bg-primary text-on-primary rounded hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                                        Verify
+                                    </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-4 px-6 font-semibold text-primary">ORD-2023-1051</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-sm">SM</div>
+<span>Stark Manufacturing</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right font-medium">$45,000.00</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-variant text-on-surface-variant">
+                                        Letter of Credit
+                                    </span>
+</td>
+<td class="py-4 px-6">
+<div class="group relative cursor-pointer inline-block">
+<img alt="Receipt Thumbnail" class="w-12 h-12 object-cover rounded border border-outline-variant shadow-sm group-hover:border-primary transition-colors" data-alt="A clean, highly legible photograph of a formal financial document, specifically a bank-issued letter of credit. The paper rests on a minimal, light-gray desk surface. The composition is straightforward and professional, illuminated by soft, diffuse lighting to ensure zero glare on the printed text." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSthFeAMu_nA6ZcBPfplxTgU5fhi9rmpzo7u7NfCkxU7dJa8Jj-jZi8_FJ0bF2e4WjgdLBWYWgdQtdDXievhRUI24tYeu5U4iPzdHLVmIBy3Q6uZb2YDbdZZ-q7t7HObbiWNrJ3LLdTZ9y9fpyyZlGoPPhzVJ4XDaKWJuA_m4mWbCkC1h05q6yp0DyNPuF-YFK3VWa1ykFeSg7Y3CSlhkZfFeA2dCxpWJMX4OhpdMxCD5wp3vnF5UTO9CIV99P9KlpabxoMI2Ub54"/>
+<div class="absolute inset-0 bg-primary/10 rounded opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-primary shadow-sm text-lg">zoom_in</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="inline-flex items-center justify-center h-10 px-6 font-label-md text-label-md bg-primary text-on-primary rounded hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                                        Verify
+                                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-6 py-4 border-t border-outline-variant bg-surface-container-lowest flex items-center justify-between">
+<p class="text-body-md text-on-surface-variant m-0">Showing 3 of 12 pending payments</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Modal untuk Preview Gambar -->
+<div id="imageModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+    <div class="relative max-w-4xl w-full bg-white rounded-lg overflow-hidden shadow-2xl">
+        <div class="p-4 border-b border-outline-variant flex justify-between items-center">
+            <h3 class="text-h3 font-h3 text-on-surface">Review Bukti Pembayaran</h3>
+            <button onclick="closeModal()" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="p-4 flex justify-center bg-surface-dim">
+            <img id="modalImage" src="" alt="Proof Preview" class="max-h-[70vh] object-contain shadow-lg border border-outline-variant">
+        </div>
+        <div class="p-6 bg-surface flex justify-end gap-3">
+            <p class="text-body-md text-on-surface-variant italic mr-auto">Pastikan nominal dan nama pengirim sesuai dengan pesanan.</p>
+            <button onclick="closeModal()" class="px-6 py-2 bg-primary text-on-primary rounded font-label-md hover:bg-primary-container transition-colors">Selesai Review</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentVerifyButtonId = null;
+
+    function openPreview(imageUrl, btnId) {
+        document.getElementById('modalImage').src = imageUrl;
+        document.getElementById('imageModal').classList.remove('hidden');
+        currentVerifyButtonId = btnId;
+    }
+
+    function closeModal() {
+        document.getElementById('imageModal').classList.add('hidden');
+        if (currentVerifyButtonId) {
+            const btn = document.getElementById(currentVerifyButtonId);
+            btn.disabled = false;
+            btn.classList.remove('opacity-50', 'cursor-not-allowed');
+            btn.innerText = "Verify Now";
+        }
+    }
+</script>

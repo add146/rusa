@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daftar Pesanan - Rusamas ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#e02928",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#410002",
+                      "on-tertiary-fixed": "#341100",
+                      "on-error": "#ffffff",
+                      "secondary": "#bb0112",
+                      "primary": "#00236f",
+                      "on-secondary-container": "#fffbff",
+                      "on-primary-fixed": "#00164e",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#eff4ff",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#ffdbcb",
+                      "on-primary-fixed-variant": "#264191",
+                      "primary-fixed-dim": "#b6c4ff",
+                      "on-surface": "#0b1c30",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#93000b",
+                      "surface": "#f8f9ff",
+                      "on-primary-container": "#90a8ff",
+                      "outline-variant": "#c5c5d3",
+                      "primary-container": "#1e3a8a",
+                      "surface-container-highest": "#d3e4fe",
+                      "tertiary": "#4b1c00",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface-tint": "#4059aa",
+                      "on-tertiary-fixed-variant": "#773205",
+                      "surface-container": "#e5eeff",
+                      "surface-variant": "#d3e4fe",
+                      "secondary-fixed-dim": "#ffb4ab",
+                      "background": "#f8f9ff",
+                      "tertiary-container": "#6e2c00",
+                      "inverse-primary": "#b6c4ff",
+                      "on-background": "#0b1c30",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#cbdbf5",
+                      "surface-container-high": "#dce9ff",
+                      "surface-bright": "#f8f9ff",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#444651",
+                      "secondary-fixed": "#ffdad6",
+                      "on-tertiary-container": "#f39461",
+                      "primary-fixed": "#dce1ff",
+                      "outline": "#757682",
+                      "inverse-surface": "#213145",
+                      "tertiary-fixed-dim": "#ffb691",
+                      "success": "#10B981",
+                      "success-container": "#D1FAE5",
+                      "on-success-container": "#065F46",
+                      "warning": "#F59E0B",
+                      "warning-container": "#FEF3C7",
+                      "on-warning-container": "#92400E"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max-width": "1440px",
+                      "sidebar-width": "280px",
+                      "grid-gutter": "1.5rem",
+                      "page-padding": "1.5rem",
+                      "section-gap": "2rem"
+              },
+              "fontFamily": {
+                      "h1": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "h3": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "h2": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "h1-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "h1": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h3": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h2": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1-mobile": [
+                              "30px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full w-[280px] bg-primary-container dark:bg-primary-container border-r border-outline-variant shadow-sm flex flex-col z-20">
+<div class="p-page-padding border-b border-on-primary-container/20">
+<h1 class="text-h3 font-h3 text-white mb-1">Rusamas ERP</h1>
+<p class="font-label-md text-label-md text-on-primary-container">Enterprise Management</p>
+</div>
+<div class="p-page-padding">
+<button class="w-full bg-secondary text-white font-label-md text-label-md py-3 rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+                New Order
+            </button>
+</div>
+<ul class="flex-1 overflow-y-auto py-4">
+<li>
+<a class="flex items-center px-page-padding py-3 text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors font-body-md text-body-md gap-3" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center px-page-padding py-3 text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors font-body-md text-body-md gap-3" href="#">
+<span class="material-symbols-outlined">group</span>
+                    Clients
+                </a>
+</li>
+<li>
+<a class="flex items-center px-page-padding py-3 text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors font-body-md text-body-md gap-3" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Products
+                </a>
+</li>
+<li>
+<a class="flex items-center px-page-padding py-3 bg-secondary text-white font-bold border-l-4 border-white font-body-md text-body-md gap-3" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+                    Orders
+                </a>
+</li>
+<li>
+<a class="flex items-center px-page-padding py-3 text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors font-body-md text-body-md gap-3" href="#">
+<span class="material-symbols-outlined">factory</span>
+                    Production
+                </a>
+</li>
+<li>
+<a class="flex items-center px-page-padding py-3 text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors font-body-md text-body-md gap-3" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                    Reports
+                </a>
+</li>
+</ul>
+<ul class="mt-auto border-t border-on-primary-container/20 py-4">
+<li>
+<a class="flex items-center px-page-padding py-3 text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors font-body-md text-body-md gap-3" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+</li>
+<li>
+<a class="flex items-center px-page-padding py-3 text-on-primary-container hover:bg-primary/50 hover:bg-primary/80 transition-colors font-body-md text-body-md gap-3" href="#">
+<span class="material-symbols-outlined">logout</span>
+                    Logout
+                </a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Area -->
+<div class="ml-[280px] w-[calc(100%-280px)] min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-280px)] h-16 bg-surface dark:bg-surface-dim bg-surface-container-low border-b border-outline-variant flex justify-between items-center px-page-padding z-10">
+<div class="flex-1 flex items-center gap-4">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface border border-outline-variant rounded-DEFAULT py-2 pl-10 pr-4 text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface" placeholder="Search orders..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold border border-outline-variant ml-2 overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Close-up professional headshot of a middle-aged man in a well-lit corporate office environment. He is wearing a crisp blue dress shirt, looking directly at the camera with a confident, approachable smile. The lighting is soft and natural, emphasizing a calm and reliable professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5gC60ALpWFMQJpfSSoRabwRq_aEeAHfRkzRpLx_Pyu5ae8q0pMJMa9c5W8EiV4qSuFlM-l2gdqCbhgIeCVfWT2H4uWkIGqjA5BDHDrIty3uzs7zHA3dt-FFQRfviDrRc2IE0jzGsk78sQW2s2WspV6wBrCjMQvtRxCxSY5_Ct0v9lRTCTwyBoX1AFnlZI7xmvS4N6W03ePXZ5O9FGOBVQklXePasmiSEAPm3NO8HsFlhCO2_Lx_ca3kiCpVCuwVzX1rHCXJJN1nY"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<main class="mt-16 p-page-padding flex-1 bg-surface-lowest">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-h2 font-h2 text-on-surface mb-2">Orders</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Manage and track customer orders across all product lines.</p>
+</div>
+<button class="bg-primary hover:bg-primary-container text-white px-6 py-3 rounded-DEFAULT font-label-md text-label-md transition-colors flex items-center gap-2 h-12 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                    New Order
+                </button>
+</div>
+<!-- Table Container -->
+<div class="bg-white border border-outline-variant rounded-lg shadow-sm overflow-hidden flex flex-col">
+<!-- Table Toolbar -->
+<div class="p-4 border-b border-outline-variant flex justify-between items-center bg-slate-50">
+<div class="flex gap-4 items-center">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">filter_list</span>
+<select class="w-full bg-white border border-outline-variant rounded-DEFAULT py-2 pl-10 pr-8 text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none text-on-surface appearance-none">
+<option>All Statuses</option>
+<option>Pending</option>
+<option>Processing</option>
+<option>Completed</option>
+<option>Cancelled</option>
+</select>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant rounded-DEFAULT text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+<button class="p-2 border border-outline-variant rounded-DEFAULT text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">view_column</span>
+</button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface border-b border-outline-variant">
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant whitespace-nowrap">
+<div class="flex items-center gap-2 cursor-pointer hover:text-primary">
+                                        ID Pesanan
+                                        <span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+</div>
+</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant whitespace-nowrap">Klien</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant whitespace-nowrap">Tanggal</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant text-right whitespace-nowrap">Total</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant whitespace-nowrap">Status</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant text-right whitespace-nowrap">Aksi</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors bg-white">
+<td class="py-4 px-6 font-semibold text-primary">#ORD-2023-001</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-xs">AC</div>
+<span>Acme Corp</span>
+</div>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">Oct 24, 2023</td>
+<td class="py-4 px-6 text-right font-semibold">$12,450.00</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-success-container text-on-success-container border border-success/20">
+                                        Completed
+                                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors bg-slate-50">
+<td class="py-4 px-6 font-semibold text-primary">#ORD-2023-002</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold text-xs">GL</div>
+<span>Global Logistics</span>
+</div>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">Oct 23, 2023</td>
+<td class="py-4 px-6 text-right font-semibold">$8,200.50</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-warning-container text-on-warning-container border border-warning/20">
+                                        Processing
+                                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors bg-white">
+<td class="py-4 px-6 font-semibold text-primary">#ORD-2023-003</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold text-xs">ST</div>
+<span>Stark Industries</span>
+</div>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">Oct 22, 2023</td>
+<td class="py-4 px-6 text-right font-semibold">$45,000.00</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-surface-container-highest text-on-surface border border-outline-variant">
+                                        Pending
+                                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors bg-slate-50">
+<td class="py-4 px-6 font-semibold text-primary">#ORD-2023-004</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-xs">WN</div>
+<span>Wayne Enterprises</span>
+</div>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">Oct 20, 2023</td>
+<td class="py-4 px-6 text-right font-semibold">$112,500.00</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-error-container text-on-error-container border border-error/20">
+                                        Cancelled
+                                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-4 border-t border-outline-variant flex justify-between items-center bg-white text-body-md font-body-md text-on-surface-variant">
+<div>Showing 1 to 4 of 48 entries</div>
+<div class="flex gap-1">
+<button class="px-3 py-1 border border-outline-variant rounded text-on-surface-variant hover:bg-surface-container disabled:opacity-50" disabled="">Prev</button>
+<button class="px-3 py-1 border border-primary bg-primary text-white rounded">1</button>
+<button class="px-3 py-1 border border-outline-variant rounded text-on-surface-variant hover:bg-surface-container">2</button>
+<button class="px-3 py-1 border border-outline-variant rounded text-on-surface-variant hover:bg-surface-container">3</button>
+<span class="px-2 py-1">...</span>
+<button class="px-3 py-1 border border-outline-variant rounded text-on-surface-variant hover:bg-surface-container">12</button>
+<button class="px-3 py-1 border border-outline-variant rounded text-on-surface-variant hover:bg-surface-container">Next</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
